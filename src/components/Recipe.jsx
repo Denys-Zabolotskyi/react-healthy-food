@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { BsAlarm } from 'react-icons/bs';
 import { HiOutlineChartPie, HiOutlineChartBar } from 'react-icons/hi';
 
@@ -27,4 +28,13 @@ export const Recipe = ({ recipe: { name, time, servings, calories } }) => {
       </div>
     </div>
   );
+};
+
+Recipe.propTypes = {
+  recipe: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    time: PropTypes.string.isRequired,
+    servings: PropTypes.number.isRequired,
+    calories: PropTypes.number.isRequired,
+  }).isRequired,
 };
