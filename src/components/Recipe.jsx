@@ -1,31 +1,32 @@
 import PropTypes from 'prop-types';
 import { BsAlarm } from 'react-icons/bs';
 import { HiOutlineChartPie, HiOutlineChartBar } from 'react-icons/hi';
+import { RecipeInfo, InfoBlock, Badge, BadgesWrapper } from './Recipe.styled';
 
 export const Recipe = ({ recipe: { name, time, servings, calories } }) => {
   return (
-    <div style={{ border: '1px solid black' }}>
+    <div>
       <h2>{name}</h2>
-      <div>
-        <div>
+      <RecipeInfo>
+        <InfoBlock>
           <BsAlarm />
-          {time} min
-        </div>
-        <div>
+          <span>{calories} calories</span>
+        </InfoBlock>
+        <InfoBlock>
           <HiOutlineChartPie />
-          {servings} servings
-        </div>
-        <div>
+          <span>{servings} servings</span>
+        </InfoBlock>
+        <InfoBlock>
           <HiOutlineChartBar />
-          {calories} calories
-        </div>
-      </div>
-      <div>
-        <h3>Difficulty</h3>
-        <span>Easy</span>
-        <span>Medium</span>
-        <span>Hard</span>
-      </div>
+          <span>{calories} calories</span>
+        </InfoBlock>
+      </RecipeInfo>
+      <h3>Difficulty</h3>
+      <BadgesWrapper>
+        <Badge>Easy</Badge>
+        <Badge>Medium</Badge>
+        <Badge>Hard</Badge>
+      </BadgesWrapper>
     </div>
   );
 };
